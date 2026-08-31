@@ -1,0 +1,17 @@
+# gltest network configuration.
+# Point this at whichever environment you want integration tests / deploys to hit.
+# See: https://docs.genlayer.com/developers/intelligent-contracts/tooling-setup
+
+networks:
+  default: localnet
+
+  localnet:
+    url: http://localhost:4000/api
+    # Studio ships pre-funded accounts; leave accounts empty to auto-use them.
+    accounts: []
+
+  studionet:
+    url: https://studio.genlayer.com/api
+
+  testnetAsimov:
+    url: https://genlayer-testnet.rpc.caldera.xyz/http

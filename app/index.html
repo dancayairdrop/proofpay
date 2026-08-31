@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProofPay — AI-adjudicated bounty escrow on GenLayer</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">◈</span>
+        <div>
+          <h1>ProofPay</h1>
+          <p class="tagline">Bounties settled by an on-chain AI — not a middleman</p>
+        </div>
+      </div>
+      <div class="wallet" id="wallet"></div>
+    </header>
+
+    <main>
+      <section class="panel create">
+        <h2>Post a bounty</h2>
+        <p class="hint">
+          Lock GEN + plain-English acceptance criteria. When someone submits proof,
+          the Intelligent Contract reads the page, judges it with an LLM, and
+          releases the escrow automatically if validators agree it passes.
+        </p>
+        <form id="create-form">
+          <label>Title<input id="f-title" required placeholder="Fix the login crash" /></label>
+          <label>Acceptance criteria
+            <textarea id="f-criteria" required rows="3"
+              placeholder="A merged GitHub PR that fixes the reported login crash."></textarea>
+          </label>
+          <label>Reward (GEN)<input id="f-reward" type="number" min="0.0001" step="0.0001" required value="1" /></label>
+          <button type="submit">Fund bounty</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="list-head">
+          <h2>Bounties</h2>
+          <button id="refresh" class="ghost">↻ Refresh</button>
+        </div>
+        <div id="bounties" class="bounties"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

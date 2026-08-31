@@ -1,0 +1,13 @@
+{
+  "name": "proofpay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI-adjudicated bounty escrow on GenLayer",
+  "scripts": {
+    "deploy": "node deploy/deploy.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "^0.13.0"
+  }
+}
